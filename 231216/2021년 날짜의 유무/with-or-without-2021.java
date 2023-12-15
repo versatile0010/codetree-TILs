@@ -12,7 +12,7 @@ public class Main {
     public static String f(int m, int d){
         if(m < 0 || m > 12) return "No";
         if(m == 2 && (1 <= d && d <= 28)) return "Yes";
-        if(1<= d && d <= 31) return "Yes";
+        if(m != 2 && (1<= d && d <= 31)) return "Yes";
         return "No"; 
     }
 }
