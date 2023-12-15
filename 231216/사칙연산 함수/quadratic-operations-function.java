@@ -8,21 +8,24 @@ public class Main {
         int a = Integer.parseInt(stk.nextToken());
         String op = stk.nextToken();
         int b = Integer.parseInt(stk.nextToken());
-        System.out.print(a + " " + op + " " + b + " = ");
         f(a,op,b);
     }
     public static void f(int a, String op, int b){
        switch (op){
         case "+": 
+            System.out.print(a + " " + op + " " + b + " = ");
             System.out.println(a+b);
             break;
         case "-":
+            System.out.print(a + " " + op + " " + b + " = ");
             System.out.println(a-b);
             break;
         case "*":
+            System.out.print(a + " " + op + " " + b + " = ");
             System.out.println(a*b);
             break;
         case "/":
+            System.out.print(a + " " + op + " " + b + " = ");
             System.out.println(a/b);
             break;
         default:
