@@ -9,6 +9,6 @@ public class Main {
         int a = Integer.parseInt(stk.nextToken());
         int b = Integer.parseInt(stk.nextToken());
 
-        System.out.println(Math.pow(a, b));
+        System.out.println((int)Math.pow(a, b));
     }
 }
