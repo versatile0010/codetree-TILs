@@ -10,7 +10,7 @@ public class Main {
         for(int i = 1; i <= n ; i++){
             a[i] = Integer.parseInt(stk.nextToken());
             if(i%2==1){
-                Arrays.sort(a, 1, i);
+                Arrays.sort(a, 1, i+1);
                 System.out.print(a[i/2+1]+" ");
             }
         }
