@@ -13,6 +13,14 @@ public class Main {
         }
 
         Arrays.sort(a);
-        System.out.println(a[n-1] + a[n]);
+        int l = 0;
+        int r = 2*n-1;
+        int ans = -1;
+        while(l < r){
+            ans = Math.max(a[l] + a[r], ans);
+            l++;
+            r--;
+        }
+        System.out.println(ans);
     }
 }
