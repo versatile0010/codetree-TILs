@@ -11,7 +11,7 @@ public class Main {
         int cnt = 0;
         int [] fre = new int[26];
         for(int i = 0 ; i < a.length(); i++){
-            if(fre[a.charAt(i)-'a'] > 0){
+            if(fre[a.charAt(i)-'a'] == 0){
                 cnt++;
             }
             fre[a.charAt(i)-'a']++;
