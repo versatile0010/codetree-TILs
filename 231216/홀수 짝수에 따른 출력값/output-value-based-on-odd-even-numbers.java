@@ -9,7 +9,7 @@ public class Main {
     }
     public static int f(int n){
         if(n <= 1) return n;
-        if(n%2 == 0) return n + f(n-1);
+        if(n%2 == 0) return n + f(n/2);
         return n + f(n -2);
     }
 }
