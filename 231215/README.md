@@ -4,11 +4,11 @@
 23년 12월 15일 목표(90px)를 달성했어요🥳.
 
 ![120xp](https://img.shields.io/badge/EXP-120xp-%235cb85c.svg?for-the-badge)
-![1일째](https://img.shields.io/badge/연속학습-1일째-%23E34F26.svg?for-the-badge)
+![2일째](https://img.shields.io/badge/연속학습-2일째-%23E34F26.svg?for-the-badge)
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-9|120xp|1일째🔥|
+9|120xp|2일째🔥|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
@@ -20,7 +20,7 @@
 |[Novice Mid / 함수 / 값을 반환하는 함수](https://www.codetree.ai/missions?missionId=5)|[[개념]짝수이면서 합이 5의 배수인 수](https://www.codetree.ai/missions/5/problems/an-even-number-with-a-multiple-of-5-in-the-sum)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/versatile0010/codetree-TILs/blob/main/231215/%EC%A7%9D%EC%88%98%EC%9D%B4%EB%A9%B4%EC%84%9C%20%ED%95%A9%EC%9D%B4%205%EC%9D%98%20%EB%B0%B0%EC%88%98%EC%9D%B8%20%EC%88%98/an-even-number-with-a-multiple-of-5-in-the-sum.java)|
 |[Novice Mid / 함수 / 값을 반환하는 함수](https://www.codetree.ai/missions?missionId=5)|[[개념]함수를 이용한 369 게임](https://www.codetree.ai/missions/5/problems/369-games-using-functions)|![보통][medium]|![Passed][passed]|[링크](https://github.com/versatile0010/codetree-TILs/blob/main/231215/%ED%95%A8%EC%88%98%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20369%20%EA%B2%8C%EC%9E%84/369-games-using-functions.java)|
 |[Novice Mid / 함수 / 값을 반환하는 함수](https://www.codetree.ai/missions?missionId=5)|[[개념]함수를 이용한 소수 판별](https://www.codetree.ai/missions/5/problems/decimal-decisions-using-functions)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/versatile0010/codetree-TILs/blob/main/231215/%ED%95%A8%EC%88%98%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%86%8C%EC%88%98%20%ED%8C%90%EB%B3%84/decimal-decisions-using-functions.java)|
-|[Novice Mid / 함수 / 값을 반환하는 함수](https://www.codetree.ai/missions?missionId=5)|[[개념]함수를 이용한 윤년 판별](https://www.codetree.ai/missions/5/problems/tell-the-function-using-a-leap-year)|![쉬움][easy]|![Failed][failed]|[링크](https://github.com/versatile0010/codetree-TILs/blob/main/231215/%ED%95%A8%EC%88%98%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%9C%A4%EB%85%84%20%ED%8C%90%EB%B3%84/tell-the-function-using-a-leap-year.java)|
+|[Novice Mid / 함수 / 값을 반환하는 함수](https://www.codetree.ai/missions?missionId=5)|[[개념]함수를 이용한 윤년 판별](https://www.codetree.ai/missions/5/problems/tell-the-function-using-a-leap-year)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/versatile0010/codetree-TILs/blob/main/231215/%ED%95%A8%EC%88%98%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%9C%A4%EB%85%84%20%ED%8C%90%EB%B3%84/tell-the-function-using-a-leap-year.java)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
