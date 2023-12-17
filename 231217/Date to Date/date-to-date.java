@@ -22,7 +22,7 @@ public class Main {
             b += t[i];
         }
 
-        System.out.println(b-a);
+        System.out.println(b-a+1);
 
     }
 }
