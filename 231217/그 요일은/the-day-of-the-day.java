@@ -23,14 +23,14 @@ public class Main {
         }
 
         int dayDiff = getDays(m2, d2) - getDays(m1, d1);
+        //System.out.println("daydiff = " + dayDiff);
         int cnt=0;
-        while(dayDiff >= 0){
-            int idx = (dayDiff)%7;
-            if(idx == targetIdx){
-                cnt++;
-            }
-            dayDiff -= 7;
+        cnt += (dayDiff/7);
+        dayDiff %= 7;
+        if(dayDiff == targetIdx){
+            cnt++;
         }
+
         System.out.println(cnt);
     }
     
