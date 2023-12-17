@@ -23,9 +23,9 @@ public class Main {
             destDays += t[i];
         }        
 
-        int dayDiff = Math.abs(destDays-srcDays+1);
-
+        int dayDiff = destDays-srcDays;
+        int off = 1;
         String [] table = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-        System.out.println(table[dayDiff%7]);
+        System.out.println(table[dayDiff%7+off]);
     }
 }
