@@ -13,12 +13,12 @@ public class Main {
         int [] t = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
         int a = d1;
-        for(int i = 0 ; i < m1; i++){
+        for(int i = 0 ; i < m1-1; i++){
             a += t[i];
         }
 
         int b = d2;
-        for(int i = 0 ; i < m2; i++){
+        for(int i = 0 ; i < m2-1; i++){
             b += t[i];
         }
 
@@ -26,3 +26,6 @@ public class Main {
 
     }
 }
+
+// 11 5
+//12 21
