@@ -13,8 +13,9 @@ public class Main {
         int d1 = Integer.parseInt(stk.nextToken());
         int m2 = Integer.parseInt(stk.nextToken());
         int d2 = Integer.parseInt(stk.nextToken());
+
         String day = br.readLine();
-        int targetIdx = 0;
+        int targetIdx = -1;
         for(int i = 0 ; i < dict.length; i++){
             if(day.equals(dict[i])){
                 targetIdx = i;
