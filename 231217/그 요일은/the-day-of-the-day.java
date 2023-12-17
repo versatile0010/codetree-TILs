@@ -23,12 +23,12 @@ public class Main {
         }
 
         int dayDiff = getDays(m2, d2) - getDays(m1, d1);
-        //System.out.println("daydiff = " + dayDiff);
-        int cnt=0;
-        cnt += (dayDiff/7);
-        dayDiff %= 7;
-        if(dayDiff == targetIdx){
-            cnt++;
+        int cnt = 0;
+        for(int i = 0; i <= dayDiff; i++){
+            //System.out.println(i%7);
+            if(i%7 == targetIdx){
+                cnt++;
+            }
         }
 
         System.out.println(cnt);
