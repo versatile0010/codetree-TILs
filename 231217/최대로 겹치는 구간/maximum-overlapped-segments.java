@@ -12,11 +12,13 @@ public class Main {
             int st = Integer.parseInt(stk.nextToken());
             int end = Integer.parseInt(stk.nextToken());
 
-            for(int j = st+100; j<=end+100; j++){
+            for(int j = st+100; j<end+100; j++){
                 a[j]++;
-                ans = Math.max(ans, a[j]);
             }
         }
-        System.out.println(ans-1);
+        for(int i = 0 ; i <=201; i++){
+            ans = Math.max(ans, a[i]);
+        }
+        System.out.println(ans);
     }
 }
