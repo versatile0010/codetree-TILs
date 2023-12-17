@@ -19,11 +19,12 @@ public class Main {
                     arr[j]++;
                 }
             } else { 
-                for(j = prev; j > prev-x; j--){
+                for(j = prev; j >= prev-x; j--){
                     arr[j]++;
                 }
             }
             prev = j;
+            //System.out.println(prev-1000);
         }
 
         int cnt = 0 ;
