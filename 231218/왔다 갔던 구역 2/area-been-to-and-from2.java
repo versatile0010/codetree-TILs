@@ -6,11 +6,11 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine()); 
 
-        int [] arr = new int [2002];
+        int [] arr = new int [2001];
         int [] st = new int[n];
         int [] end = new int[n];
 
-        int cur = 1000;
+        int cur = 0;
         for(int i = 0 ; i < n ; i ++){
             StringTokenizer stk = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(stk.nextToken());
