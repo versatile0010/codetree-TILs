@@ -26,6 +26,6 @@ public class Main {
         int dayDiff = destDays-srcDays;
         int off = 1;
         String [] table = new String[]{"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-        System.out.println(table[dayDiff%7+off]);
+        System.out.println(table[Math.abs(dayDiff%7+off)]);
     }
 }
