@@ -25,22 +25,23 @@ public class Main {
             ops[i] = op;
             if("R".equals(op)){
                 st[i] = cur;
-                end[i] = cur + x;
-                cur += x;
+                end[i] = cur + x - 1;
             } else {
                 st[i] = cur;
                 end[i] = cur - x;
-                cur -= x;
             }
+            cur = end[i];
         }
 
         for(int i = 0 ; i < n ; i++){
+            //System.out.println((st[i]) + " " + (end[i]));
             if("R".equals(ops[i])){
                 for(int j = st[i]; j < end[i]; j++){
                     check[j].add(B);
                 }
             } else {
-                for(int j = st[i]; j > end[j]; j--){
+                for(int j = st[i]; j > end[i]; j--){
+                    //System.out.println("j=" + (j-100000) );
                     check[j].add(W);
                 }
             }
@@ -68,5 +69,6 @@ public class Main {
                 }
             }
         }
+        System.out.println(ansList[W] + " " + ansList[B] + " " + ansList[2]);
     }
 }
