@@ -25,23 +25,25 @@ public class Main {
             ops[i] = op;
             if("R".equals(op)){
                 st[i] = cur;
-                end[i] = cur + x - 1;
+                end[i] = cur + x;
+                cur += x;
             } else {
-                st[i] = cur;
-                end[i] = cur - x;
+                st[i] = cur - 1;
+                end[i] = cur - x -1;
+                cur -= x;
             }
-            cur = end[i];
         }
 
         for(int i = 0 ; i < n ; i++){
             //System.out.println((st[i]) + " " + (end[i]));
             if("R".equals(ops[i])){
                 for(int j = st[i]; j < end[i]; j++){
+                    //System.out.println("j=B" + (j-100000));
                     check[j].add(B);
                 }
             } else {
                 for(int j = st[i]; j > end[i]; j--){
-                    //System.out.println("j=" + (j-100000) );
+                    //System.out.println("j=W" + (j-100000));
                     check[j].add(W);
                 }
             }
