@@ -26,11 +26,11 @@ public class Main {
             if("R".equals(op)){
                 st[i] = cur;
                 end[i] = cur + x;
-                cur += x;
+                cur += (x-1);
             } else {
-                st[i] = cur - 1;
-                end[i] = cur - x -1;
-                cur -= x;
+                st[i] = cur;
+                end[i] = cur - x;
+                cur -= (x-1);
             }
         }
 
