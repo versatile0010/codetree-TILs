@@ -9,6 +9,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         check = new ArrayList[200001];
+        for(int i = 0 ; i <= 200000; i++){
+            check[i] = new ArrayList<>();
+        }
 
         int n = Integer.parseInt(br.readLine());
         for(int i = 0 ; i < n ; i++){
