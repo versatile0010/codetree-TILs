@@ -19,6 +19,7 @@ public class Main {
             }
         }
 
+        boolean flag = false;
         int maxX = -1;
         int maxY = -1;
         int minX = 2001;
@@ -30,9 +31,13 @@ public class Main {
                 maxY = Math.max(maxY, i);
                 minX = Math.min(minX, j);
                 minY = Math.min(minY, i);
+                flag = true;
             }
         }
+
         int ans = (maxX - minX + 1) * (maxY - minY + 1);
-        System.out.println(ans);
+        if(flag){
+            System.out.println(ans);
+        } else System.out.println(0);
     }
 }
