@@ -11,10 +11,12 @@ public class Main {
         for(int i = 0 ; i < n ; i++){
             arr[i] = Integer.parseInt(br.readLine());
         }
-        for(int i = 0 ; i < n; i++){
-            cnt++;
-            if(i==0 || arr[i] != arr[i-1]){
-                ans = Math.max(ans, cnt);
+        for(int i = 0; i < n; i++){
+            if(i==0 || arr[i] == arr[i-1]){
+                cnt++;
+                ans = Math.max(cnt, ans);
+            } else {
+                cnt = 1;
             }
         }
         System.out.println(ans);
