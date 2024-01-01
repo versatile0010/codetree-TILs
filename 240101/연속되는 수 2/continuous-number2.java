@@ -15,7 +15,6 @@ public class Main {
             cnt++;
             if(i==0 || arr[i] != arr[i-1]){
                 ans = Math.max(ans, cnt);
-                cnt = 0;
             }
         }
         System.out.println(ans);
