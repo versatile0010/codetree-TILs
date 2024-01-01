@@ -7,15 +7,27 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         int cnt = 0;
         int ans = -1;
+        String [] arr = new String[n];
         for(int i = 0 ; i < n ; i++){
-            String x = br.readLine();
-            if(x.charAt(0) == '-'){
+            arr[i] = br.readLine();
+        }
+        for(int i = 0 ; i < n ; i++){
+            if(i == 0 || check(arr[i], arr[i-1])) {
                 cnt++;
-            } else {
                 ans = Math.max(cnt, ans);
-                cnt = 0;
+            } else {
+                cnt=1;
             }
         }
         System.out.println(ans);
+    }
+    public static boolean check(String a, String b){
+        if(a.charAt(0) == '-' && b.charAt(0) == '-'){
+            return true;
+        } else if (a.charAt(0) == '-' && b.charAt(0) != '-'){
+            return false;
+        } else if (a.charAt(0) != '-' && b.charAt(0) == '-'){
+            return false;
+        } else return true;
     }
 }
