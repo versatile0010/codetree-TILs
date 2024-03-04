@@ -13,7 +13,7 @@ public class Main {
             a[i] = Integer.parseInt(stk.nextToken());
         }
         int ans = 0;
-        for(int i = 0; i < n-k; i++) {
+        for(int i = 0; i <= n-k; i++) {
             int t = 0;
             for(int j = i ; j < i+k; j++) {
                 t += a[j];
