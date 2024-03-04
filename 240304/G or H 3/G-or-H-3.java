@@ -6,7 +6,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stk = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(stk.nextToken());
-        int k = Integer.parseInt(stk.nextToken()) + 1;
+        int k = Integer.parseInt(stk.nextToken());
 
         int [] a = new int [10001];
         for(int i = 0; i < n ; i++){
@@ -20,9 +20,9 @@ public class Main {
             }
         }
         int ans = 0;
-        for(int i = 1 ; i <= 10000 - k; i++){
+        for(int i = 0 ; i <= 10000 - k; i++){
             int t = 0;
-            for(int j = i; j < i + k; j++){
+            for(int j = i; j <= i + k; j++){
                 t += a[j];
             }
             ans = Math.max(ans, t);
