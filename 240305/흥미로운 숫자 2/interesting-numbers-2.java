@@ -18,16 +18,20 @@ public class Main {
     }
     public static boolean isGood(int n){
         int [] t = new int[10];
+        int size = 0;
         while(n > 0){
             t [n%10] ++;
+            size++;
             n/=10;
         }
-        int cnt = 0;
-        for(int i = 0; i <= 9; i++){
-            if(t[i] > 0) {
-                cnt++;
+
+        boolean flag = false;
+
+        for(int j = 0; j <= 9; j++){
+            if(t[j] == size - 1){
+                flag = true;
             }
         }
-        return cnt == 2;
+        return flag;
     }
 }
