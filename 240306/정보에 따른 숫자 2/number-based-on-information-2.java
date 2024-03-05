@@ -25,14 +25,16 @@ public class Main {
             for(int j = 0; j <= 1000; j++){
                 // i 와 가장 가까운 S 위치 구하기
                 if(arr[j] == 'S' && Math.abs(i - j) <= diff){
-                    minS = Math.min(j, minS);
+                    minS = j;
+                    diff = Math.abs(i - minS);
                 }
             }
             diff = 1001;
             for(int j = 0; j <= 1000; j++){
                 // i 와 가장 가까운 N 위치 구하기
                 if(arr[j] == 'N' && Math.abs(i - j) <= diff) {
-                    minN = Math.min(j, minN);
+                    minN = j;
+                    diff = Math.abs(i - minN);
                 }
             }
             int d1 = Math.abs(i - minS);
