@@ -9,36 +9,34 @@ public class Main {
         int a = Integer.parseInt(stk.nextToken());
         int b = Integer.parseInt(stk.nextToken());
 
-        char [] arr = new char[1001];
+        int [] s = new int[1001];
+        int [] n = new int[1001];
+
+        int sIdx = 0;
+        int nIdx = 0;
 
         for(int i = 0 ; i < T ; i ++){
             stk = new StringTokenizer(br.readLine());
             String c = stk.nextToken();
-            int idx = Integer.parseInt(stk.nextToken());
-            arr[idx] = c.charAt(0);
+            int pos = Integer.parseInt(stk.nextToken());
+            
+            if("S".equals(c)){
+                s[sIdx++] = pos;
+            } else {
+                n[nIdx++] = pos;
+            }
+
         }
         int cnt = 0;
         for(int i = a; i <= b ; i++){
-            int minS = 1001;
-            int minN = 1001;
-            int diff = 1001;
-            for(int j = 0; j <= 1000; j++){
-                // i 와 가장 가까운 S 위치 구하기
-                if(arr[j] == 'S' && Math.abs(i - j) <= diff){
-                    minS = j;
-                    diff = Math.abs(i - minS);
-                }
+            int d1 = Integer.MAX_VALUE;
+            for(int j = 0; j < sIdx; j++){
+                d1 = Math.min(d1, Math.abs(i - s[j]));
             }
-            diff = 1001;
-            for(int j = 0; j <= 1000; j++){
-                // i 와 가장 가까운 N 위치 구하기
-                if(arr[j] == 'N' && Math.abs(i - j) <= diff) {
-                    minN = j;
-                    diff = Math.abs(i - minN);
-                }
+            int d2 = Integer.MAX_VALUE;
+            for(int j = 0 ; j < nIdx; j++){
+                d2 = Math.min(d2, Math.abs(i - n[j]));
             }
-            int d1 = Math.abs(i - minS);
-            int d2 = Math.abs(i - minN);
             if(d1 <= d2){
                 cnt++;
             }
