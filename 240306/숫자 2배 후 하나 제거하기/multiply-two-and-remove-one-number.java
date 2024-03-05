@@ -18,17 +18,16 @@ public class Main {
             a[i] *= 2;
             for(int j = 0 ; j < n ; j++){
                 // 제외할 숫자를 선택
-                int [] t = new int[n-1];
-                int idx = 0;
-                for(int k = 0; k < n ; k++){
-                    if(k == j) continue;
-                    t[idx++] = a[k];
-                }
-                // 인접한 숫자 간 차이의 합을 구하자
                 int sum = 0;
-                for(int k = 1; k < n-1; k++){
-                    sum += Math.abs(t[k-1]-t[k]);
+
+                int prev = -1;
+                for(int k = 0; k < n ; k++){
+                    if(k==j) continue;
+                    if(prev != -1)
+                        sum += Math.abs(a[k] - prev);
+                    prev = a[k];
                 }
+
                 ans = Math.min(sum, ans);
             }
             a[i] /= 2;
