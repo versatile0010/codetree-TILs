@@ -23,10 +23,6 @@ public class Main {
         int idx = n-1;
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-        for(Node ele : nodes){
-            System.out.println(ele.score + " " + ele.time);
-        }
-
         for(int t = 10000; t >= 1; t--){
             while(idx >= 0 && nodes[idx].time >= t){
                 //System.out.println("t = " + t + "pq add " + nodes[idx].score);
