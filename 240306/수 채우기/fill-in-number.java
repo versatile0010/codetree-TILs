@@ -7,8 +7,8 @@ public class Main {
         int cnt = n / 5;
         n %= 5;
         cnt += n / 2;
-
-        if(cnt ==0) cnt = -1;
+        n %= 2;
+        if(n > 0) cnt = -1;
         System.out.println(cnt);
     }
 }
