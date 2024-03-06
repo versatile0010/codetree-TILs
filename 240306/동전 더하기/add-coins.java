@@ -15,9 +15,8 @@ public class Main {
         int cnt = 0;
         for(int i = n-1; i >= 0 ; i--){
             if(k == 0) break;
-            int r = k / coins[i];
-            k -= r*coins[i];
-            cnt += r;
+            cnt += k / coins[i];
+            k %= coins[i];
         }
         System.out.println(cnt);
     }
