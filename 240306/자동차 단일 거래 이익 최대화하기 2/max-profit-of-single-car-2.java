@@ -10,21 +10,17 @@ public class Main {
         for(int i = 0 ; i < n ; i++){
             arr[i] = Integer.parseInt(stk.nextToken());
         }
-        int ans = 0;
-        int prev = -1;
+        int maxProfit = 0;
+        int minPrice = arr[0];
         for(int i = 0 ; i < n ; i++){
-            if(prev == -1) {
-                prev = arr[i];
-                continue;
+            int p = arr[i] - minPrice;
+            if(p > maxProfit){
+                maxProfit = p;
             }
-            int diff = arr[i] - prev;
-            if(diff < 0){
-                prev = arr[i];
-                continue;
+            if(minPrice > arr[i]){
+                minPrice = arr[i];
             }
-            ans = Math.max(ans, diff);
-            prev = arr[i];
         }
-        System.out.println(ans);
+        System.out.println(maxProfit);
     }
 }
