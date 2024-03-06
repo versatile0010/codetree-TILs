@@ -17,8 +17,10 @@ public class Main {
             }
             return -1;
         });
+        StringBuilder sb = new StringBuilder();
         for(int i = 0 ; i < n ; i++){
-            System.out.print(arr[i]);
+            sb.append(String.valueOf(arr[i]));
         }
+        System.out.println(sb.toString());
     }
 }
