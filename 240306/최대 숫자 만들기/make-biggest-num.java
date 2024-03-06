@@ -5,13 +5,13 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        Integer [] arr = new Integer[n];
+        Long [] arr = new Long[n];
         for(int i = 0 ; i < n ; i++){
-            arr[i] = Integer.parseInt(br.readLine());
+            arr[i] = Long.parseLong(br.readLine());
         }
         Arrays.sort(arr, (a, b)->{
-            int ab = Integer.parseInt(String.valueOf(a) + String.valueOf(b));
-            int ba = Integer.parseInt(String.valueOf(b) + String.valueOf(a));
+            long ab = Long.parseLong(String.valueOf(a) + String.valueOf(b));
+            long ba = Long.parseLong(String.valueOf(b) + String.valueOf(a));
             if(ba >= ab){
                 return 1;
             }
