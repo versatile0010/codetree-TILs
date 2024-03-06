@@ -20,7 +20,6 @@ public class Main {
             }
         }
 
-        Arrays.sort(a);
         int score = 0;
         for(int i = 0; i < n ; i++){
             int bx = b[i];
