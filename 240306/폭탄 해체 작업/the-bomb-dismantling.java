@@ -14,22 +14,28 @@ public class Main {
             nodes[i] = new Node(s, t);
         }
         Arrays.sort(nodes, (a, b) -> {
-            if(a.time == b.time){
-                return b.score - a.score ;
+            if(a.time != b.time){
+                return a.time - b.time;
             }
-            return a.time - b.time;
+            return a.score - b.score;
         });
-        int prevTime = -1;
         int ans = 0;
-        for(Node node : nodes){
-            if(prevTime == -1){
-                prevTime = node.time;
-                ans += node.score;
-                continue;
+        int idx = n-1;
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        for(Node ele : nodes){
+            System.out.println(ele.score + " " + ele.time);
+        }
+
+        for(int t = 10000; t >= 1; t--){
+            while(idx >= 0 && nodes[idx].time >= t){
+                //System.out.println("t = " + t + "pq add " + nodes[idx].score);
+                pq.add(-nodes[idx].score);
+                idx--;
             }
-            if(prevTime < node.time){
-                ans += node.score;
-                prevTime = node.time;
+            if(!pq.isEmpty()){
+                //System.out.println(pq.peek());
+                ans += -pq.poll();
             }
         }
         System.out.println(ans);
