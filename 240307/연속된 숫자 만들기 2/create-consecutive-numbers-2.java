@@ -14,10 +14,10 @@ public class Main {
         if(a[0] + 1 == a[1] && a[1] + 1 == a[2]) {
             ans = 0;
         }
-        else if((a[1] - a[0])%2 == 0 || (a[2] - a[1] % 2 == 0)) {
-            ans = 2;
+        else if(a[1] - a[0] ==2 2 || a[2] - a[1] == 2) {
+            ans = 1;
         } else {
-            ans = 3;
+            ans = 2;
         }
         System.out.println(ans);
     }
