@@ -13,7 +13,7 @@ public class Main {
 
         Arrays.sort(a);
 
-        if(a[1] == (a[0] + a[2])/2) {
+        if(a[0] + 1 == a[1] && a[1] + 1 == a[2]) {
             System.out.println(0);
         }
         else if((a[0] + 2 == a[1] || a[1] + 2 == a[2])) {
