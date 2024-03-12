@@ -34,7 +34,7 @@ public class Main {
         int ans = n;
         prev = -1;
         for(int i = 0 ; i < n ; i++) {
-            if(arr[i] == 1) {
+            if(arr[i] == 1 && prev != -1) {
                 int dist = i - prev + 1;
                 ans = Math.min(ans, dist);
             }
