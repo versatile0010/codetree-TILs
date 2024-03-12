@@ -6,6 +6,7 @@ public class Main {
 
         int n = Integer.parseInt(br.readLine());
         String str = br.readLine();
+
         int [] arr = new int[n];
         for(int i = 0 ; i < n; i++){
             arr[i] = str.charAt(i) - '0';
@@ -31,7 +32,8 @@ public class Main {
         }
         // 가장 먼 거리를 가진 좌표는 st 와 prev 이다.
         arr[(end + st)/2] = 1;
-        int ans = n;
+
+        int ans = Integer.MAX_VALUE;
         prev = -1;
         for(int i = 0 ; i < n ; i++) {
             if(arr[i] == 1 && prev != -1) {
@@ -42,4 +44,5 @@ public class Main {
         }
         System.out.println(ans);
     }
+
 }
