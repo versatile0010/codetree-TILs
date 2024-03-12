@@ -16,7 +16,7 @@ public class Main {
         if(a[1] == (a[0] + a[2])/2) {
             System.out.println(0);
         }
-        else if((a[0]-a[1] == 2 || a[1] - a[2] == 2)) {
+        else if((a[0] + 2 == a[1] || a[1] + 2 == a[2])) {
             System.out.println(1);
         } else {
             System.out.println(2);
