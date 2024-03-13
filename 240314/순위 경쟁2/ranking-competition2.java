@@ -21,7 +21,7 @@ public class Main {
                 a[i] = i == 0 ? 0 : a[i-1];
             }
         }
-        int ans = n == 0 ? 0 : 1;
+        int ans = n == 1 ? 0 : 1;
         for(int i = 1 ; i < n ; i++){
             if(
                 (a[i-1] == b[i-1] && a[i] > b[i]) ||
