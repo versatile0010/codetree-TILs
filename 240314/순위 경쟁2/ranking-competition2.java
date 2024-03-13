@@ -9,7 +9,7 @@ public class Main {
         int [] a = new int [n+1];
         int [] b = new int [n+1];
 
-        for(int i = 1 ; i < n ; i++){
+        for(int i = 1 ; i <= n ; i++){
             stk = new StringTokenizer(br.readLine());
             String op = stk.nextToken();
             int score = Integer.parseInt(stk.nextToken());
