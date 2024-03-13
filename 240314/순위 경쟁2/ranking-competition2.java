@@ -14,11 +14,11 @@ public class Main {
             String op = stk.nextToken();
             int score = Integer.parseInt(stk.nextToken());
             if("A".equals(op)){
-                a[i] = i == 0 ? score : a[i-1] + score;
-                b[i] = i == 0 ? 0 : b[i-1];
+                a[i] = a[i-1] + score;
+                b[i] = b[i-1];
             } else {
-                b[i] = i == 0 ? score : b[i-1] + score;
-                a[i] = i == 0 ? 0 : a[i-1];
+                b[i] = b[i-1] + score;
+                a[i] = a[i-1];
             }
         }
         int ans = 0;
