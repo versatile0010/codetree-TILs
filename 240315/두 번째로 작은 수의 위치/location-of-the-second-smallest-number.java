@@ -29,17 +29,20 @@ public class Main {
         if(!isExist){
             System.out.println(-1);
         } else {
+            isExist = false;
             int ans = -1;
             for(int i = 0; i < n ; i++){
                 if(temp[i] == second) {
                     if(ans != -1) {
                         System.out.println(-1);
+                        isExist = true;
                         break;
                     }
                     ans = i+1;
                 }
             }
-            System.out.println(ans);
+            if(!isExist)
+              System.out.println(ans);
         }
 
     }
