@@ -7,26 +7,24 @@ public class Main {
         StringTokenizer stk;
         int n = Integer.parseInt(br.readLine());
         stk = new StringTokenizer(br.readLine());
-
-        HashMap<Integer, Integer> order = new HashMap<>();
-        HashMap<Integer, Integer> count = new HashMap<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
         int [] arr = new int[n];
-        for(int i = 0 ; i < n ; i++){
+        for(int i = 0 ; i  < n ; i++){
             int x = Integer.parseInt(stk.nextToken());
             arr[i] = x;
-            order.put(x, i+1);
-            if(count.containsKey(x)){
-                count.put(x, count.get(x) + 1);
-            } else {
-                count.put(x, 1);
-            }
+            pq.add(x);
         }
-        Arrays.sort(arr);
-        int second = arr[1];
-        if(count.get(second) > 1) {
+        pq.poll();
+        int second = pq.poll();
+        if(!pq.isEmpty() && pq.peek() == second){
             System.out.println(-1);
         } else {
-            System.out.println(order.get(arr[1]));
+            for(int i = 0 ; i < n ; i++){
+                if(second == arr[i]){
+                    System.out.println(i+1);
+                    break;
+                }
+            }
         }
     }
 }
