@@ -15,13 +15,11 @@ public class Main {
         }
         int idx = 0;
         int cnt = 0;
-        while(idx < n - 1){
-            if(arr[idx] == 1) {
-                idx += m;
-                cnt ++;
-                idx += m;
-            } else {
-                idx++;
+        
+        for(int i = 0 ; i < n ; i++){
+            if(arr[i] == 1){
+                cnt++;
+                i += 2*m;
             }
         }
         System.out.println(cnt);
