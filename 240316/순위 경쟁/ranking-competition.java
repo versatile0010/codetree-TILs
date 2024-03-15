@@ -17,18 +17,18 @@ public class Main {
             if("A".equals(op)) {
                 if(status(a, b, c) != status(a + s, b, c)) {
                     cnt++;
-                    a += s;
                 }
+                a += s;
             } else if("B".equals(op)) {
                 if(status(a, b, c) != status(a, b + s, c)) {
                     cnt++;
-                    b += s;
                 }
+                b += s;
             } else { // C
                 if(status(a, b, c) != status(a, b, c+s)){
                     cnt++;
-                    c += s;
                 }
+                c += s;
             }
             //System.out.println("a==" + a + ", b==" + b + ", c==" + c);
         }
