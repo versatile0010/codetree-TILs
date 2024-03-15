@@ -7,24 +7,40 @@ public class Main {
         StringTokenizer stk;
         int n = Integer.parseInt(br.readLine());
         stk = new StringTokenizer(br.readLine());
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
         int [] arr = new int[n];
-        for(int i = 0 ; i  < n ; i++){
+        int [] temp = new int[n];
+        for(int i = 0 ; i < n ; i++){
             int x = Integer.parseInt(stk.nextToken());
             arr[i] = x;
-            pq.add(x);
+            temp[i] = x;
         }
-        pq.poll();
-        int second = pq.poll();
-        if(!pq.isEmpty() && pq.peek() == second){
-            System.out.println(-1);
-        } else {
-            for(int i = 0 ; i < n ; i++){
-                if(second == arr[i]){
-                    System.out.println(i+1);
-                    break;
-                }
+        Arrays.sort(arr);
+        int first = arr[0];
+        int second = 0;
+        boolean isExist = false;
+        for(int i = 1; i < n ; i++){
+            if(first != arr[i]){
+                second = arr[i];
+                isExist = true;
+                break;
             }
         }
+        if(!isExist){
+            System.out.println(-1);
+        } else {
+            int ans = -1;
+            for(int i = 0; i < n ; i++){
+                if(temp[i] == second) {
+                    if(ans != -1) {
+                        System.out.println(-1);
+                        break;
+                    }
+                    ans = i+1;
+                }
+            }
+            System.out.println(ans);
+        }
+
     }
 }
