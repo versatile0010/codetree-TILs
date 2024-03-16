@@ -23,6 +23,7 @@ public class Main {
         List<Set<Integer>> graph = new ArrayList<>();
         for(int i = 0; i <=n; i++){
             graph.add(new HashSet<Integer>());
+            graph.get(i).add(i);
         }
 
         for(int i = 0 ; i < k*3; i++){
