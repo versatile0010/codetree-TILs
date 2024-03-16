@@ -9,22 +9,20 @@ public class Main {
         int k = Integer.parseInt(stk.nextToken());
         stk = new StringTokenizer(br.readLine());
         HashMap<Integer, Integer> hm = new HashMap<>();
+        int [] numbers = new int[n];
         for(int i = 0 ; i < n ; i++){
             int x = Integer.parseInt(stk.nextToken());
-            hm.put(x, hm.getOrDefault(x, 0) + 1);
+            numbers[i] = x;
         }
         
         int cnt = 0;
-        for(int key : hm.keySet()){
+        for(int key : numbers){
             int t = k - key;
             if(hm.containsKey(t)){
-                if(t == key && hm.get(key) >= 2) {
-                    //hm.put(key, hm.get(key) - 1);
-                } 
-                cnt++;
-            }
-            //hm.put()
+                cnt += hm.get(t);
+            } 
+            hm.put(key, hm.getOrDefault(key, 0) + 1);
         }
-        System.out.println(cnt/2);
+        System.out.println(cnt);
     }
 }
