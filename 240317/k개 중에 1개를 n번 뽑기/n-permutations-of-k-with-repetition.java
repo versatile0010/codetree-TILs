@@ -14,7 +14,7 @@ public class Main {
         k = Integer.parseInt(stk.nextToken());
         n = Integer.parseInt(stk.nextToken());
         
-        arr = new int[k+1];
+        arr = new int[n+1];
 
         dfs(0);
     }
