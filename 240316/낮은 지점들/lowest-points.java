@@ -20,7 +20,7 @@ public class Main {
                 hm.put(x, y);
             }
         }
-        int ans = 0;
+        long ans = 0;
         for(int key : hm.keySet()){
             ans += hm.get(key);
         }
