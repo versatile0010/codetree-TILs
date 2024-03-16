@@ -12,7 +12,7 @@ public class Main {
             int x = Integer.parseInt(stk.nextToken());
             int y = Integer.parseInt(stk.nextToken());
             if(hm.containsKey(x)){
-                if(hm.get(x) >= y){
+                if(hm.get(x) > y){
                     hm.put(x, y);
                 }
             } else {
