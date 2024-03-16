@@ -10,20 +10,12 @@ public class Main {
             char c = input.charAt(i);
             hm.put(c, hm.getOrDefault(c, 0) + 1);
         }
-        int ans = 0;
-        boolean flag = false;
-        for(char key : hm.keySet()){
-            if(hm.get(key) == 1){
-                System.out.println(key);
-                ans = key;
-                flag = true;
-                break;
+        for(int i = 0 ; i < input.length(); i++){
+            if(hm.get(input.charAt(i)) == 1){
+                System.out.println(input.charAt(i));
+                System.exit(0);
             }
         }
-        if(flag == false){
-            System.out.println("None");
-        } else {
-            System.out.println((char)ans);
-        }
+        System.out.println("None");
     }
 }
