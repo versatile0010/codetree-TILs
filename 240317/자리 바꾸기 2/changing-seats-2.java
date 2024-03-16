@@ -20,12 +20,12 @@ public class Main {
             int b = Integer.parseInt(stk.nextToken());
             nodes[i] = new Node(a, b);
         }
-        List<Set<Integer>> graph = new ArrayList<>();
-        for(int i = 0; i <=n; i++){
-            graph.add(new HashSet<Integer>());
-            graph.get(i).add(i);
+        Set<Integer> [] graph = new HashSet[n+1];
+        for(int i = 1 ; i<=n; i++){
+            graph[i] = new HashSet<Integer>();
+            graph[i].add(i);
         }
-
+    
         for(int i = 0 ; i < k*3; i++){
             Node node = nodes[i%k];
             int x = node.x;
@@ -34,17 +34,17 @@ public class Main {
             int a = arr[x];
             int b = arr[y];
 
-            graph.get(a).add(y);
-            graph.get(b).add(x);
+            graph[a].add(y);
+            graph[b].add(x);
 
             arr[x] = b;
             arr[y] = a;
         }
         for(int i = 1; i<=n; i++){
-            if(graph.get(i).size()==0){
+            if(graph[i].size()==0){
                 System.out.println(1);
             } else {
-                System.out.println(graph.get(i).size());
+                System.out.println(graph[i].size());
             }
         }
     }
