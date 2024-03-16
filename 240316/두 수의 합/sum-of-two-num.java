@@ -19,7 +19,7 @@ public class Main {
             int t = k - key;
             if(hm.containsKey(t)){
                 if(t == key && hm.get(key) >= 2) {
-                    hm.put(key, hm.get(key) - 1);
+                    //hm.put(key, hm.get(key) - 1);
                 } 
                 cnt++;
             }
