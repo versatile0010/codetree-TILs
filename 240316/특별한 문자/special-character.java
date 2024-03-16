@@ -14,6 +14,7 @@ public class Main {
         boolean flag = false;
         for(char key : hm.keySet()){
             if(hm.get(key) == 1){
+                System.out.println(key);
                 ans = key;
                 flag = true;
                 break;
