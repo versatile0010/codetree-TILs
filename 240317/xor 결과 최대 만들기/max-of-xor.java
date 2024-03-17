@@ -18,7 +18,7 @@ public class Main {
 
         arr = new int[n];
         base = new int[n];
-        used = new boolean[n+1];
+        used = new boolean[n];
 
         StringTokenizer stk = new StringTokenizer(br.readLine());
         for(int i = 0 ; i < n ; i++){
@@ -32,9 +32,9 @@ public class Main {
     public static void dfs(int depth, int start){
         if(depth == m){
             // xor 계산 후 ans 갱신
-            int calc = base[0];
+            int calc = arr[0];
             for(int i = 1 ; i < m; i++){
-                calc ^= base[i];
+                calc ^= arr[i];
             }
             ans = Math.max(calc, ans);
             return;
