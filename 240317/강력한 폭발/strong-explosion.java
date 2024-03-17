@@ -35,7 +35,7 @@ public class Main {
     }
 
     public static void find(int depth){
-        if(depth == (int)bombCounts.size()){
+        if(depth == bombCounts.size()){
             // 영역 계산 후 max 값 갱신
             ans = Math.max(ans, calculate());
             return;
