@@ -43,7 +43,7 @@ public class Main {
             if(!used[i]){
                 used[i] = true;
                 arr[depth] = base[i];
-                dfs(depth+1, start+1);
+                dfs(depth+1, i+1);
                 used[i] = false;
             }
         }
