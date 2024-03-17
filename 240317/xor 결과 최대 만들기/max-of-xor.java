@@ -17,7 +17,7 @@ public class Main {
 
         arr = new int[n];
         used = new boolean[n+1];
-        
+
         dfs(0, 1);
         System.out.println(ans);
     }
@@ -25,10 +25,15 @@ public class Main {
     public static void dfs(int depth, int start){
         if(depth == m){
             // xor 계산 후 ans 갱신
-            int calc = 0;
-            for(int i = 0 ; i < m; i++){
-                calc ^= arr[i];
+            int calc = arr[0];
+            if(m == 1) {
+                calc = 0;
+            } else {
+                for(int i = 1 ; i < m; i++){
+                    calc ^= arr[i];
+                }
             }
+
             ans = Math.max(calc, ans);
             return;
         }
