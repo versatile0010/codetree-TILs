@@ -54,19 +54,14 @@ public class Main {
 
     public static int calculate(){
         int [][] temp = new int[n][n];
-        for(int i = 0 ; i < n ; i++){
-            for(int j = 0 ; j < n; j++){
-                temp[i][j] = graph[i][j];
-            }
-        }
-
+    
         for(int i = 0 ; i < n ; i++){
             for(int j = 0 ; j < n ; j++){
                 if(bombTypes[i][j] > 0){
                     int x = j;
                     int y = i;
                     int type = bombTypes[y][x];
-                    for(int dir = 0 ; dir < 5; dir++){
+                    for(int dir = 0 ; dir < direction[type].length; dir++){
                         int nx = x + direction[type][dir].x;
                         int ny = y + direction[type][dir].y;
                         if(nx < 0 || nx >= n || ny < 0 || ny >= n) continue;
