@@ -8,6 +8,7 @@ public class Main {
     static int [][] bombTypes;
     static int [][] graph;
     static int ans = 0;
+
     static Pair [][] direction = {
         {new Pair(0, -2), new Pair(0, -1), new Pair(0, 0), new Pair(0, 1), new Pair(0, 2)},
         {new Pair(0, -1), new Pair(0, 0), new Pair(-1, 0), new Pair(1, 0), new Pair(0, 1)},
@@ -40,7 +41,7 @@ public class Main {
             ans = Math.max(ans, calculate());
             return;
         } else {
-            for(int i = 0; i <= 2; i++){ // 폭탄은 0 ,1 ,2 타입만 존재
+            for(int i = 1; i <= 3; i++){ // 폭탄은 0 ,1 ,2 타입만 존재
                 int x = bombCounts.get(depth).x;
                 int y = bombCounts.get(depth).y;
 
@@ -60,7 +61,7 @@ public class Main {
                 if(bombTypes[i][j] > 0){
                     int x = j;
                     int y = i;
-                    int type = bombTypes[y][x];
+                    int type = bombTypes[y][x] - 1;
                     for(int dir = 0 ; dir < direction[type].length; dir++){
                         int nx = x + direction[type][dir].x;
                         int ny = y + direction[type][dir].y;
