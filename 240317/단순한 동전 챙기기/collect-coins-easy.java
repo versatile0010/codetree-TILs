@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
     public static int n;
-    public static int [][] graph;
+    public static boolean [][] visited;
     public static int [][] dist;
     public static boolean [] used;
     public static ArrayList<Tuple> coins = new ArrayList<>();
@@ -17,7 +17,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
-        graph = new int[n][n];
         for(int i = 0 ; i < n ; i++){
             String str = br.readLine();
             for(int j = 0 ; j < n ; j++){
@@ -82,8 +81,11 @@ public class Main {
     public static int getDistance(Tuple from, Tuple to){
         // from -> to 까지의 최단 거리를 구하자
         dist = new int[n][n];
+        visited = new boolean[n][n];
+
         Queue<Tuple> q = new LinkedList<>();
         q.add(from);
+        visited[from.y][from.x] = true;
         while(!q.isEmpty()){
             Tuple now = q.poll();
             if(now.x == to.x && now.y == to.y){
@@ -93,8 +95,10 @@ public class Main {
                 int nx = now.x + dx[dir];
                 int ny = now.y + dy[dir];
                 if(nx < 0 || nx >= n || ny < 0 || ny >= n) continue;
+                if(visited[ny][nx]) continue;
                 dist[ny][nx] = dist[now.y][now.x] + 1;
                 q.offer(new Tuple(nx, ny, 0));
+                visited[ny][nx] = true;
             }
         }
         return dist[to.y][to.x];
@@ -108,15 +112,6 @@ public class Main {
             this.x = x;
             this.y = y;
             this.num = num;
-        }
-    }
-    
-    public static class Pair {
-        int x;
-        int y;
-        public Pair(int x, int y){
-            this.x=x;
-            this.y=y;
         }
     }
 }
