@@ -66,7 +66,7 @@ public class Main {
                     int x = j;
                     int y = i;
                     int type = bombTypes[y][x];
-                    for(int dir = 0 ; dir < direction[type].length; dir++){
+                    for(int dir = 0 ; dir < 5; dir++){
                         int nx = x + direction[type][dir].x;
                         int ny = y + direction[type][dir].y;
                         if(nx < 0 || nx >= n || ny < 0 || ny >= n) continue;
