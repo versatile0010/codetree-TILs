@@ -4,6 +4,7 @@ import java.util.*;
 public class Main {
     static int n;
     static Pair[] lines;
+    static ArrayList<Pair> selected = new ArrayList<>();
     static int ans;
     static int [] choice;
     static boolean [] visited;
@@ -26,33 +27,31 @@ public class Main {
     public static void dfs(int depth){
         if(depth == n){
             // 선택한 n 개의 선분으로 뽑을 수 있는 최대 선분의 수를 구한다.
-            Pair[] pairs = new Pair[n];
-            for(int i = 0 ; i < n; i++){
-                pairs[i] = lines[i];
+            if(isPossible()){
+                ans = Math.max(ans, selected.size());
             }
-            Arrays.sort(pairs, (Pair a, Pair b)-> {
-                return a.x2 - b.x2;
-            });
-            int cnt = 1;
-            Pair prev = pairs[0];
-            for(int i = 1 ; i < n ; i++){
-                if(pairs[i].x1 > prev.x2){
-                    cnt++;
-                    prev = pairs[i];
-                }
-            }
-            ans = Math.max(ans, cnt);
             return;
         } else {
-            for(int i = 0 ; i < n ; i++){
-                if(!visited[i]){
-                    visited[i] = true;
-                    choice[depth] = i;
-                    dfs(depth+1);
-                    visited[i] = false;
+            selected.add(lines[depth]);
+            dfs(depth+1);
+            selected.remove(selected.size() - 1);
+            dfs(depth+1);
+        }
+    }
+
+    public static boolean isPossible(){
+        for(int i = 0 ; i < selected.size(); i++){
+            for(int j = i+1; j < selected.size(); j++){
+                if(isOverlapped(selected.get(i), selected.get(j))){
+                    return false;
                 }
             }
         }
+        return true;
+    }
+
+    public static boolean isOverlapped(Pair a, Pair b){
+        return Math.max(a.x1, b.x1) <= Math.min(a.x2, b.x2);
     }
 
     public static class Pair{
