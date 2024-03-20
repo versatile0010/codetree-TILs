@@ -38,7 +38,7 @@ public class Main {
         }
     }
     public static int calc(){
-        if(graph[0][arr[0]] == 0) {
+        if(graph[0][arr[0]] == 0 || graph[arr[n-2]][0] == 0) {
             return Integer.MAX_VALUE;
         }
 
@@ -51,9 +51,6 @@ public class Main {
             }
             ret += graph[prev][arr[i]];
             prev = arr[i];
-        }
-        if(graph[arr[n-2]][0] == 0) {
-            return Integer.MAX_VALUE;
         }
         ret += (graph[arr[n-2]][0]); // arr[n-2] -> 0
         return ret;
