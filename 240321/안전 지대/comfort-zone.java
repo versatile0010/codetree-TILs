@@ -25,20 +25,29 @@ public class Main {
                 maxK = Math.max(maxK, graph[i][j]);
             }
         }
+        int maxLabel = -1;
+        int ans = 0;
         for(int k = 1; k <= maxK; k++){
+            int label = 0;
+            visited = new boolean[n][m];
+
             for(int i = 0 ; i < n ; i++){
                 for(int j = 0 ; j < m ; j++){
                     if(!isPossible(j, i, k)) continue;
-                    r = 0;
-                    visited = new boolean[n][m];
                     dfs(j, i, k);
+                    label++;
                 }
             }
+            if(label > maxLabel) {
+                maxLabel = label;
+                ans = k;
+            }
         }
+        System.out.println(ans + " " + maxLabel);
     }
     public static boolean isPossible(int x, int y, int k){
         if(x < 0 || x >= m || y < 0 || y >= n) return false;
-        if(graph[y][x] <= k) return false;
+        if( visited[y][x] || graph[y][x] <= k) return false;
         return true;
     }
     public static void dfs(int x, int y, int k){
