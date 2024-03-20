@@ -26,7 +26,7 @@ public class Main {
         }
         visited[0][0] = true;
         dfs(0, 0);
-        int ans = visited[m-1][m-1] ? 1 : 0;
+        int ans = visited[n-1][m-1] ? 1 : 0;
         System.out.println(ans);
     }
     public static void dfs(int x, int y){
