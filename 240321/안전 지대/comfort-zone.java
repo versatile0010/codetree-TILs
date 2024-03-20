@@ -31,6 +31,7 @@ public class Main {
                     if(!isPossible(j, i, k)) continue;
                     r = 0;
                     visited = new boolean[n][m];
+                    dfs(j, i, k);
                 }
             }
         }
