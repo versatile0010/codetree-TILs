@@ -38,6 +38,10 @@ public class Main {
         }
     }
     public static int calc(){
+        if(graph[0][arr[0]] == 0) {
+            return Integer.MAX_VALUE;
+        }
+
         int ret = graph[0][arr[0]]; // 0 -> arr[0]
         int prev = arr[0];
 
