@@ -48,6 +48,9 @@ public class Main {
             ret += graph[prev][arr[i]];
             prev = arr[i];
         }
+        if(graph[arr[n-2]][0] == 0) {
+            return Integer.MAX_VALUE;
+        }
         ret += (graph[arr[n-2]][0]); // arr[n-2] -> 0
         return ret;
     }
