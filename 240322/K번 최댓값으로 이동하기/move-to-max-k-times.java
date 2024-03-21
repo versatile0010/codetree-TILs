@@ -30,10 +30,9 @@ public class Main {
         Queue<Pair> q = new LinkedList<>();
         q.offer(new Pair(x, y));
         visited[y][x] = true;
-        int ansX = 0;
-        int ansY = 0;
+        int ansX = x;
+        int ansY = y;
         for(int i = 0 ; i < k ; i++){
-            boolean canGo = true;
             //while(!q.isEmpty()){
                 Pair cur = q.poll();
                 PriorityQueue<Tuple> pq = new PriorityQueue<>();
@@ -44,20 +43,19 @@ public class Main {
                     if(visited[ny][nx] || graph[ny][nx] > graph[y][x] ) continue;
                     pq.offer(new Tuple(nx, ny, graph[ny][nx]));
                 }
+                if(q.isEmpty()){
+                    break;
+                }                
                 Tuple tuple = pq.peek();
                 visited[tuple.y][tuple.x] = true;
                 q.add(new Pair(tuple.x, tuple.y));
                 ansX = tuple.x;
                 ansY = tuple.y;
                 //System.out.println("("+ tuple.x + ", " + tuple.y + ")");
-                if(q.isEmpty()){
-                    canGo = true;
-                }
             //}
-            if(!canGo) break;
         }
 
-        System.out.println(ansY+" "+ansX);
+        System.out.println(ansX+" "+ansY);
 
     }
     public static class Pair {
