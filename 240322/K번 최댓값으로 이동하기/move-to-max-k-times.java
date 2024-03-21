@@ -66,7 +66,6 @@ public class Main {
     }
 
     public static class Tuple implements Comparable<Tuple> {
-
         int x;
         int y;
         int num;
@@ -83,7 +82,7 @@ public class Main {
                 if(this.y != o.y){
                     return this.y - o.y;
                 }
-                if(this.x != o.x) {
+                else if(this.x != o.x) {
                     return this.x - o.x;
                 }
             }
