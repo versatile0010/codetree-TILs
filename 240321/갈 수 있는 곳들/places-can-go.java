@@ -26,8 +26,8 @@ public class Main {
 
          for(int i = 0 ; i < k ; i++){
             stk = new StringTokenizer(br.readLine());
-            int y = Integer.parseInt(stk.nextToken());
-            int x = Integer.parseInt(stk.nextToken());
+            int y = Integer.parseInt(stk.nextToken()) - 1;
+            int x = Integer.parseInt(stk.nextToken()) - 1;
             visited = new boolean[n][n];
             bfs(x, y);
          }
