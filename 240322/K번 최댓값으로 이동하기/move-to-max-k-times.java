@@ -53,7 +53,7 @@ public class Main {
             //System.out.println("("+ tuple.x + ", " + tuple.y + ")");
         }
 
-        System.out.println(ansY+" "+ansX);
+        System.out.println((ansY+1)+" "+(ansX+1));
 
     }
     public static class Pair {
