@@ -33,29 +33,27 @@ public class Main {
         int ansX = x;
         int ansY = y;
         for(int i = 0 ; i < k ; i++){
-            //while(!q.isEmpty()){
-                Pair cur = q.poll();
-                PriorityQueue<Tuple> pq = new PriorityQueue<>();
-                for(int dir = 0 ; dir < 4 ; dir ++){
-                    int nx = cur.x + dx[dir];
-                    int ny = cur.y + dy[dir];
-                    if(nx < 0 || nx >= n || ny < 0 || ny >= n) continue;
-                    if(visited[ny][nx] || graph[ny][nx] > graph[y][x] ) continue;
-                    pq.offer(new Tuple(nx, ny, graph[ny][nx]));
-                }
-                if(q.isEmpty()){
-                    break;
-                }                
-                Tuple tuple = pq.peek();
-                visited[tuple.y][tuple.x] = true;
-                q.add(new Pair(tuple.x, tuple.y));
-                ansX = tuple.x;
-                ansY = tuple.y;
-                //System.out.println("("+ tuple.x + ", " + tuple.y + ")");
-            //}
+            Pair cur = q.poll();
+            PriorityQueue<Tuple> pq = new PriorityQueue<>();
+            for(int dir = 0 ; dir < 4 ; dir ++){
+                int nx = cur.x + dx[dir];
+                int ny = cur.y + dy[dir];
+                if(nx < 0 || nx >= n || ny < 0 || ny >= n) continue;
+                if(visited[ny][nx] || graph[ny][nx] > graph[y][x] ) continue;
+                pq.offer(new Tuple(nx, ny, graph[ny][nx]));
+            }
+            if(pq.isEmpty()){
+                break;
+            }                
+            Tuple tuple = pq.peek();
+            visited[tuple.y][tuple.x] = true;
+            q.add(new Pair(tuple.x, tuple.y));
+            ansX = tuple.x;
+            ansY = tuple.y;
+            //System.out.println("("+ tuple.x + ", " + tuple.y + ")");
         }
 
-        System.out.println(ansX+" "+ansY);
+        System.out.println(ansY+" "+ansX);
 
     }
     public static class Pair {
