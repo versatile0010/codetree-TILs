@@ -10,7 +10,7 @@ public class Main {
     }
     public static long f(){
         long l = 1;
-        long r = (long)Math.sqrt(Math.pow(10, 18));
+        long r = 2000000000;
         long x = 0;
         while(l<=r){
             long mid = (l+r)/2;
