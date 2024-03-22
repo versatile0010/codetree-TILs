@@ -27,6 +27,11 @@ public class Main {
             graph[y].add(new Node(x, w));
             graph[x].add(new Node(y, w));
         }
+
+        for(int i = 1 ; i <=n ; i++){
+            Collections.sort(graph[i]);
+        }
+
         stk = new StringTokenizer(br.readLine());
         int s = Integer.parseInt(stk.nextToken());
         int e = Integer.parseInt(stk.nextToken());
@@ -54,8 +59,8 @@ public class Main {
         pq.offer(new Node(s, 0));
         while(!pq.isEmpty()){
             Node now = pq.poll();
-            //if(visited[now.to]) continue;
-            //visited[now.to] = true;
+            if(visited[now.to]) continue;
+            visited[now.to] = true;
             for(Node cur : graph[now.to]){
                 if(dist[cur.to] > dist[now.to] + cur.w){
                     dist[cur.to] = dist[now.to] + cur.w;
