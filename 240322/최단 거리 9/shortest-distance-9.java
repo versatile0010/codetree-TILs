@@ -51,10 +51,7 @@ public class Main {
         
         while(!pq.isEmpty()){
             Node now = pq.poll();
-            if(visited[now.to]){
-                continue;
-            }
-            visited[now.to] = true;
+
             for(Node cur : graph[now.to]){
                 if(dist[cur.to] > dist[now.to] + cur.w){
                     dist[cur.to] = dist[now.to] + cur.w;
