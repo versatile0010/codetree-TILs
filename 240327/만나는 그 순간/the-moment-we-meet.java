@@ -50,7 +50,7 @@ public class Main {
         }    
 
         int ans = -1;
-        for(int i = 1 ; i <= 1000; i++){
+        for(int i = 1 ; i < at; i++){
             if(a[i] == b[i]){
                 ans = i;
                 break;
