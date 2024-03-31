@@ -19,6 +19,7 @@ public class Main {
             arr[t-1]++;
             if(arr[t-1] == k){
                 ans = t;
+                break;
             }
         }
         System.out.println(ans);
